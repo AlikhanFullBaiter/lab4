@@ -31,4 +31,12 @@ public class MyTestingClass {
         MyTestingClass other = (MyTestingClass) obj;
         return this.id == other.id && this.name.equals(other.name);
     }
+
+    @Override
+    public String toString() {
+        return "MyTestingClass{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

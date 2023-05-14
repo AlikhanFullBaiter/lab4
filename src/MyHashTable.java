@@ -1,3 +1,5 @@
+package src;
+
 public class MyHashTable<K, V> {
     private class HashNode<K,V>{
         private K key;
@@ -103,6 +105,20 @@ public class MyHashTable<K, V> {
             }
         }
         return null;
+    }
+
+    public void printBucketSizes(){
+        int[] sizes = new int[M];
+        for (int i = 0; i < M; i++) {
+            HashNode<K,V> node = chainArray[i];
+            while (node != null) {
+                sizes[i]++;
+                node = node.next;
+            }
+        }
+        for (int i = 0; i < M; i++) {
+            System.out.println("Bucket " + i + ": " + sizes[i]);
+        }
     }
 
 }
